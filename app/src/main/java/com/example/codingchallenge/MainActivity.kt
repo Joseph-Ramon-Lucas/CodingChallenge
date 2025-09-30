@@ -1,16 +1,16 @@
 package com.example.codingchallenge
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.windowInsetsTopHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
@@ -22,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.codingchallenge.ui.theme.CodingChallengeTheme
@@ -46,20 +47,19 @@ class MainActivity : ComponentActivity() {
 fun CounterDisplayWithButton(modifier: Modifier = Modifier) {
     var counter by remember { mutableStateOf(0) }
 
-    Column(modifier = Modifier, horizontalAlignment = Alignment.CenterHorizontally) {
 
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
 
         Text("count is: $counter",
-            Modifier.wrapContentSize(Alignment.Center))
-
-
-        Spacer(modifier = Modifier.height(16.dp))
+            modifier = Modifier.padding(6.dp)
+        )
 
 
         Button(onClick = {counter += 1},
-            modifier = modifier.padding(2.dp)) {
+            modifier = Modifier.padding(4.dp)) {
             Text("Tap Me")
         }
+
     }
 
 }
