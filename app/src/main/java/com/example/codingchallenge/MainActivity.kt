@@ -50,9 +50,17 @@ fun CounterDisplayWithButton(modifier: Modifier = Modifier) {
 
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
 
-        Text("count is: $counter",
-            modifier = Modifier.padding(6.dp)
-        )
+        if (counter >= 10) {
+            Text("Count is: $counter",
+                modifier = Modifier.padding(6.dp),
+                color = Color.Red
+            )
+        }
+        else{
+            Text("Count is: $counter",
+                modifier = Modifier.padding(6.dp)
+            )
+        }
 
 
         Button(onClick = {counter += 1},
